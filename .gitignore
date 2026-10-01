@@ -1,0 +1,24 @@
+# Virtual environments
+venv/
+.venv/
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+
+# Secrets
+.env
+
+# Django
+db.sqlite3
+staticfiles/
+
+
+# OS / editor
+.DS_Store
+.cursor/
+
+# Spotter provided csv file
+fuel-prices-for-be-assessment.csv
