@@ -8,6 +8,8 @@ import urllib.parse
 import urllib.request
 import re
 
+from numpy import place
+
 ROOT = Path(__file__).resolve().parent.parent
 CSV_FILE = ROOT / "data" / "fuel-prices-for-be-assessment.csv"
 GEOCODED_STATIONS_FILE = ROOT / "data" / "fuel-stations-geocoded.csv" # All columns included in spotter's provided csv file + lat, lon, geocode_source, geocode_display
@@ -28,6 +30,9 @@ STATION_CATEGORIES = {"amenity", "shop", "tourism", "building", "office"}
 
 # To expand St/Ft/Mt (e.g. 'St. Louis' == 'Saint Louis')
 _WORDS = {"st": "saint", "ste": "sainte", "ft": "fort", "mt": "mount"}
+
+# Rivers, roads, parks etc. can share a town's name (e.g. "Cedar Creek" the river) must not match.
+PLACE_CATEGORIES = {"place", "boundary"}
 
 def load_rows() -> tuple[list[str], list[dict]]:
     with open(CSV_FILE, newline="", encoding="utf-8-sig") as file:
@@ -189,11 +194,12 @@ def pick(hits: dict | None, source: str, state: str, city: str) -> tuple[dict, s
                 return h, "name_city"
         return None
     
-    for h in hits:
+    places = [h for h in hits if h["category"] in PLACE_CATEGORIES]
+    for h in places:
         if compact(h["display_name"].split(",")[0]) == compact(city):
             return h, "city_only"
-    
-    return (hits[0], "area_only") if hits else None
+
+    return (places[0], "area_only") if places else None
 
 def main() -> None:
     arg_parser = argparse.ArgumentParser()

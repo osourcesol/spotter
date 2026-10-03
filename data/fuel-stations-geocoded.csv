@@ -203,7 +203,7 @@ OPIS Truckstop ID,Truckstop Name,Address,City,State,Rack ID,Retail Price,lat,lon
 1149,PILOT TRAVEL CENTER #30,"I-70, EXIT 96",Greenfield,IN,375,3.959,39.8215377,-85.9161359,name_city,"Pilot, 2640, North 600 West, Mount Comfort, Greenfield, Buck Creek Township, Hancock County, Indiana, 46140, United States",amenity/fuel
 1149,PILOT TRAVEL CENTERS #30,"I-70, EXIT 96",Greenfield,IN,375,3.959,39.8215377,-85.9161359,name_city,"Pilot, 2640, North 600 West, Mount Comfort, Greenfield, Buck Creek Township, Hancock County, Indiana, 46140, United States",amenity/fuel
 1151,SPEEDWAY #8061,"I-70, EXIT 115 & SR-109",Knightstown,IN,375,3.759,39.7946808,-85.5303872,name_city,"Speedway, West Main Street, Knightstown, Henry County, Indiana, 46148, United States",amenity/fuel
-1154,CIRCLE K #2704691,SR-71 & CR-214,Cedar Creek,TX,595,3.199,32.7399277,-96.8160745,city_only,"Cedar Creek, Dallas, Dallas County, Texas, United States",waterway/river
+1154,CIRCLE K #2704691,SR-71 & CR-214,Cedar Creek,TX,595,3.199,,,not_found,,
 1156,CIRCLE K #4700028,"I-74/US-421, EXIT 116 & SR-44",Shelbyville,IN,375,3.599,39.5214373,-85.7769238,city_only,"Shelbyville, Shelby County, Indiana, United States",boundary/administrative
 1157,One9 #297,"I-70, EXIT 11 & SR-46",Terre Haute                             ,IN,510,3.43566666,39.4330463,-87.3319171,name_city,"ONE9 Travel Center, East Margaret Drive, Terre Haute, Vigo County, Indiana, 47803, United States",highway/services
 1158,PILOT TRAVEL CENTERS #36,US-30  & SR-49,Valparaiso,IN,365,3.869,41.4485732,-87.0106417,name_city,"ONE9 Travel Center, 4105, US 30, Valparaiso, Porter County, Indiana, 46383, United States",highway/services
@@ -281,10 +281,10 @@ OPIS Truckstop ID,Truckstop Name,Address,City,State,Rack ID,Retail Price,lat,lon
 1582,LOVES TRAVEL STOP #250,I-40 EXIT 60,Amarillo,TX,585,3.314,35.1914821,-101.7618084,name_city,"Love's Travel Stop, 6930, East Interstate Drive, Amarillo, Potter County, Texas, 79118, United States",highway/services
 1585,Stripes 7Fleet #42498,US-385 & CR-1910,Andrews,TX,710,3.369,32.3187158,-102.545715,city_only,"Andrews, Andrews County, Texas, 79714, United States",boundary/administrative
 1590,ROAD RANGER #240,"I-80 & I-94, EXIT 15-A",Lake Station,IN,365,3.559,41.5784387,-87.2394649,name_city,"Road Ranger, Ripley Street, Lake Station, Hobart Township, Lake County, Indiana, 46405, United States",highway/services
-1596,FLYING J #305,"I-40, EXIT 39",Jamestown,NM,580,3.44233333,35.2026182,-106.7497236,city_only,"Jamestown Road Northwest, Ventana Ranch, Albuquerque, Bernalillo County, New Mexico, United States",highway/residential
+1596,FLYING J #305,"I-40, EXIT 39",Jamestown,NM,580,3.44233333,,,not_found,,
 1597,7-ELEVEN #36156,"I-70 & SR-519, EXIT 25/333",Eighty Four,PA,165,4.999,40.1827171,-80.1331455,city_only,"Eighty Four, North Strabane Township, Washington County, Pennsylvania, 15330, United States",place/village
-1599,ONVO TRAVEL PLAZA,"I-81, EXIT 10",Mc Graw,NY,220,3.439,42.9303866,-74.2555788,city_only,"Mc Graw Road, Town of Florida, Montgomery County, New York, 12010, United States",highway/residential
-1599,ONVO TRAVEL PLAZA,"I-81, EXIT 10",Mc Graw,NY,220,3.459,42.9303866,-74.2555788,city_only,"Mc Graw Road, Town of Florida, Montgomery County, New York, 12010, United States",highway/residential
+1599,ONVO TRAVEL PLAZA,"I-81, EXIT 10",Mc Graw,NY,220,3.439,,,not_found,,
+1599,ONVO TRAVEL PLAZA,"I-81, EXIT 10",Mc Graw,NY,220,3.459,,,not_found,,
 1602,CIRCLE K #2723387,US-98,Beaumont,MS,620,3.56566666,31.1693496,-88.9200444,city_only,"Beaumont, Perry County, Mississippi, 30423, United States",boundary/administrative
 1606,DONNAS TRAVEL PLAZA,"I-5, EXIT 202",Marysville,WA,962,4.559,48.0517429,-122.1768209,city_only,"Marysville, Snohomish County, Washington, United States",boundary/administrative
 1610,TA BALTIMORE TRAVEL CENTER,"I-95, EXIT 57",Baltimore                               ,MD,22,4.759,39.2778923,-76.5491999,name_city,"TA, O'Donnell Street Cutoff, Medford, Baltimore, Maryland, 21224, United States",highway/services
@@ -887,7 +887,7 @@ OPIS Truckstop ID,Truckstop Name,Address,City,State,Rack ID,Retail Price,lat,lon
 5907,SPEEDWAY #4035,CR-101,Shakopee,MN,448,3.599,44.7806908,-93.5060832,name_city,"Speedway, Vierling Drive East, Shakopee, Scott County, Minnesota, 55379, United States",amenity/fuel
 5909,SINCLAIR,"I-90, EXIT 233",Saint Charles,MN,515,3.529,43.9693607,-92.0659824,city_only,"Saint Charles, Winona County, Minnesota, United States",boundary/administrative
 5927,HARRISONBURG TRAVEL CENTER,"I-81,  EXIT 243 & US-11",Harrisonburg,VA,185,2.899,38.4044995,-78.911425,name_city,"Harrisonburg Travel Center, South Main Street, Harrisonburg, Virginia, 22801, United States",highway/services
-5935,WESTHAMPTON VALERO,I-295 EXIT 47A,Mount Holly                             ,NJ,160,3.329,40.0023341,-74.7884958,city_only,"Mount Holly, Mount Holly Township, Burlington County, New Jersey, 08060, United States",natural/peak
+5935,WESTHAMPTON VALERO,I-295 EXIT 47A,Mount Holly                             ,NJ,160,3.329,39.9928898,-74.7876624,city_only,"Mount Holly Township, Burlington County, New Jersey, 08060, United States",boundary/administrative
 5942,EXPRESS MART TRUCK STOP,"I-55, EXIT 185 & US-67/US-61",Barnhart,MO,540,2.99733333,38.3397205,-90.4067425,city_only,"Barnhart, Imperial Township, Jefferson County, Missouri, United States",boundary/census
 5944,LAKE MILLS TRAVEL PLAZA,"I-94, EXIT 259 & SR- 89/CR-G",Lake Mills,WI,420,3.36066666,43.0798032,-88.9125723,city_only,"Lake Mills, Jefferson County, Wisconsin, 53551, United States",boundary/administrative
 5946,PILOT TRAVEL CENTERS #918,I-90 EXIT 55,Rapid City,SD,506,3.999,44.1127178,-103.2733792,name_city,"Pilot Travel Center, Universal Drive, Rapid City, Pennington County, South Dakota, 57709, United States",highway/services
@@ -1264,8 +1264,8 @@ OPIS Truckstop ID,Truckstop Name,Address,City,State,Rack ID,Retail Price,lat,lon
 7469,PILOT TRAVEL CENTER #313,"I-70/I-55, EXIT 4 & SR-203",East Saint Louis,IL,540,3.699,38.6504988,-90.1311948,name_city,"Pilot Travel Center, 699, IL 203, Madison, East Saint Louis, Saint Clair County, Illinois, 62201, United States",highway/services
 7469,PILOT TRAVEL CENTER #313,"I-70/I-55, EXIT 4 & SR-203",East Saint Louis,IL,540,3.579,38.6504988,-90.1311948,name_city,"Pilot Travel Center, 699, IL 203, Madison, East Saint Louis, Saint Clair County, Illinois, 62201, United States",highway/services
 7469,PILOT TRAVEL CENTER #313,"I-70/I-55, EXIT 4 & SR-203",East Saint Louis,IL,540,3.379,38.6504988,-90.1311948,name_city,"Pilot Travel Center, 699, IL 203, Madison, East Saint Louis, Saint Clair County, Illinois, 62201, United States",highway/services
-7471,ROAD RANGER #185,"I-55, EXIT 145 & US-136",Mc Lean,IL,280,3.349,41.9181843,-87.7184126,city_only,"West Mc Lean Avenue, Chicago, Jefferson Township, Cook County, Illinois, 60647, United States",highway/residential
-7471,ROAD RANGER #185,"I-55, EXIT 145 & US-136",Mc Lean,IL,280,3.449,41.9181843,-87.7184126,city_only,"West Mc Lean Avenue, Chicago, Jefferson Township, Cook County, Illinois, 60647, United States",highway/residential
+7471,ROAD RANGER #185,"I-55, EXIT 145 & US-136",Mc Lean,IL,280,3.349,,,not_found,,
+7471,ROAD RANGER #185,"I-55, EXIT 145 & US-136",Mc Lean,IL,280,3.449,,,not_found,,
 7482,TA BOISE TRAVEL CENTER,"I-84, EXIT 54",Boise,ID,785,3.77066666,43.5655523,-116.1992658,name_city,"TA, Vietnam Veterans Memorial Highway, Southeast Boise, Boise, Ada County, Idaho, 83706, United States",highway/services
 7492,Mobil dba One9 #1365,"I-85, EXIT 70",Cusseta,AL,720,2.999,32.7848521,-85.3057779,city_only,"Cusseta, Chambers County, Alabama, United States",boundary/administrative
 7492,One9 #1365,"I-85, EXIT 70",Cusseta,AL,720,2.999,32.7848521,-85.3057779,city_only,"Cusseta, Chambers County, Alabama, United States",boundary/administrative
@@ -1740,7 +1740,7 @@ OPIS Truckstop ID,Truckstop Name,Address,City,State,Rack ID,Retail Price,lat,lon
 52669,COLUMBIA TRUCK STOP,US-46,Columbia,NJ,115,3.079,40.9257935,-75.0941913,city_only,"Columbia, Knowlton Township, Warren County, New Jersey, United States",boundary/census
 52674,FLYING J TRAVEL PLAZA #738,"I-20/FM707, EXIT 277",Tye,TX,575,3.124,32.4614384,-99.8719078,name_city,"Flying J Travel Center, North FM 707, Tye, Taylor County, Texas, 79563, United States",highway/services
 52675,PILOT TRAVEL CENTER #907- TOWN PUMP,"I-94, EXIT 138",Miles City                              ,MT,780,3.499,46.3970112,-105.8211068,name_city,"Pilot Travel Center, Carbon Hill Road, Miles City, Custer County, Montana, 59301, United States",highway/services
-52676,PILOT TRAVEL CENTERS #336,"I-80, EXIT 97 & US-219",Du Bois,PA,14,4.034,39.9938139,-75.1749158,city_only,"Thomas FitzSimons Junior High School, 2601, West Cumberland Street, North Philadelphia, Philadelphia, Philadelphia County, Pennsylvania, 19132, United States",building/school
+52676,PILOT TRAVEL CENTERS #336,"I-80, EXIT 97 & US-219",Du Bois,PA,14,4.034,,,not_found,,
 52678,STRIPES 7FLEET #42433,US-277,Bronte,TX,739,3.474,31.8873671,-100.29176,city_only,"Bronte, Coke County, Texas, United States",boundary/administrative
 52679,LOVES TRAVEL STOP #404,"I-295, EXIT 56 & I-95, EXIT 7",Bordentown,NJ,150,3.979,40.1462685,-74.7114508,city_only,"Bordentown, Burlington County, New Jersey, United States",boundary/administrative
 52680,PILOT TRAVEL CENTER #91,"I-95, EXIT 329",Saint Johns,FL,75,3.424,29.9032284,-81.4145468,city_only,"Saint Johns County, Florida, United States",boundary/administrative
@@ -1911,7 +1911,7 @@ OPIS Truckstop ID,Truckstop Name,Address,City,State,Rack ID,Retail Price,lat,lon
 61021,WESTOVER GOOSE CREEK,US-13 & SR-673,Westover                                ,MD,194,3.259,38.1240114,-75.7063171,city_only,"Westover, Somerset County, Maryland, 21890, United States",place/hamlet
 61028,MARATHON,"US-10, EXIT 137",Bay City,MI,260,3.259,43.6234714,-83.8963305,name_city,"Marathon, 3950, Wilder Road, Bay City, Bay County, Michigan, 48706, United States",amenity/fuel
 61028,MARATHON,"US-10, EXIT 137",Bay City,MI,260,3.199,43.6234714,-83.8963305,name_city,"Marathon, 3950, Wilder Road, Bay City, Bay County, Michigan, 48706, United States",amenity/fuel
-61030,HAGGERTY JOY MOBIL,I-275,Canton                                  ,MI,325,3.699,42.7269261,-84.6433146,city_only,"Canton, West Saint Joseph Highway, Waverly, Delta Charter Township, Eaton County, Michigan, 48917, United States",amenity/restaurant
+61030,HAGGERTY JOY MOBIL,I-275,Canton                                  ,MI,325,3.699,42.3076547,-83.4868961,city_only,"Canton Township, Wayne County, Michigan, United States",boundary/administrative
 61032,MARATHON,US-10/US-127,Clare,MI,260,3.289,43.8407831,-84.7675705,name_city,"Marathon, 10197, South Clare Avenue, Clare, Clare County, Michigan, 48617, United States",amenity/fuel
 61032,MARATHON,US-10/US-127,Clare,MI,260,3.299,43.8407831,-84.7675705,name_city,"Marathon, 10197, South Clare Avenue, Clare, Clare County, Michigan, 48617, United States",amenity/fuel
 61034,MOTOR CITY TRUCK STOP,"I-75, EXIT 43",Detroit                                 ,MI,325,3.499,42.3315509,-83.0466403,city_only,"Detroit, Wayne County, Michigan, United States",boundary/administrative
@@ -1960,7 +1960,7 @@ OPIS Truckstop ID,Truckstop Name,Address,City,State,Rack ID,Retail Price,lat,lon
 61305,BP,US-130,Cranbury,NJ,150,3.14566666,40.3163322,-74.5092094,name_city,"BP, Maplewood Avenue, Cranbury, Cranbury Township, Middlesex County, New Jersey, 08512, United States",amenity/fuel
 61308,CARLSTADT VALERO,SR-120,Carlstadt,NJ,115,3.199,40.8403778,-74.0906974,city_only,"Carlstadt, Bergen County, New Jersey, 07072, United States",boundary/administrative
 61312,BLUE STAR,US-202 & SR-31,Flemington                              ,NJ,115,3.399,40.4994985,-74.8553925,name_city,"Blue Star, US 202;NJ 31, Flemington South Estates, Flemington, Hunterdon County, New Jersey, 08822, United States",amenity/fuel
-61326,SUNOCO JAMES F COOPER PLAZA- #7008,MILEPOST 39 NJ TURNPIKE N,Mount Laurel,NJ,150,3.959,39.9341907,-74.894271,city_only,"Mount Laurel, Mount Laurel Township, Burlington County, New Jersey, 08054, United States",natural/peak
+61326,SUNOCO JAMES F COOPER PLAZA- #7008,MILEPOST 39 NJ TURNPIKE N,Mount Laurel,NJ,150,3.959,39.934002,-74.8909988,city_only,"Mount Laurel Township, Burlington County, New Jersey, United States",boundary/administrative
 61328,KW RASTALL OIL,US-130,North Brunswick,NJ,115,3.199,40.4539249,-74.476545,city_only,"North Brunswick Township, Middlesex County, New Jersey, United States",boundary/administrative
 61333,46 GAS AND TRUCK STOP,US-46,Palisades Park,NJ,115,3.23566666,40.8481556,-73.997639,city_only,"Palisades Park, Bergen County, New Jersey, 07650, United States",boundary/administrative
 61337,SUNOCO- JOHN FENWICK PLAZA #7006,"NJTP, MM 5",Penns Grove,NJ,150,3.909,39.7295581,-75.4679734,city_only,"Penns Grove, Salem County, New Jersey, United States",boundary/administrative
@@ -2096,7 +2096,7 @@ OPIS Truckstop ID,Truckstop Name,Address,City,State,Rack ID,Retail Price,lat,lon
 62800,A ONE TRUCK STOP,US-9,South Amboy,NJ,79,3.499,40.4953179,-74.298646,name_city,"A One Truck Stop, 15, Victory Plaza, South Amboy, Middlesex County, New Jersey, 08872, United States",shop/tyres
 62817,LOVES TRAVEL STOP #364,I-75 EXIT 33,Charleston,TN,285,3.589,35.2858415,-84.7575018,city_only,"Charleston, Bradley County, East Tennessee, Tennessee, United States",boundary/administrative
 62824,FLYING J TRAVEL PLAZA #1005,"I-80, EXIT 48",Fernley,NV,966,3.91566666,39.6152132,-119.2161998,name_city,"Flying J Travel Center, Dwight D. Eisenhower Highway, Fernley, Lyon County, Nevada, 89408, United States",highway/services
-62841,SPEEDWAY #9912,"I-81, EXIT 10",Mc Graw,NY,32,4.309,42.9303866,-74.2555788,city_only,"Mc Graw Road, Town of Florida, Montgomery County, New York, 12010, United States",highway/residential
+62841,SPEEDWAY #9912,"I-81, EXIT 10",Mc Graw,NY,32,4.309,,,not_found,,
 62844,CIRCLE K #4707612,"I-81, EXIT 14",Tully,NY,220,3.799,42.7995565,-76.1213163,name_city,"Circle K, 5755, Elm Street, Tully Center, Town of Tully, Onondaga County, New York, 13159, United States",amenity/fast_food
 62844,CIRCLE K #4707612,"I-81, EXIT 14",Tully,NY,220,4.299,42.7995565,-76.1213163,name_city,"Circle K, 5755, Elm Street, Tully Center, Town of Tully, Onondaga County, New York, 13159, United States",amenity/fast_food
 62850,GANSEVOORT MINI MART,"I-87, EXIT 17",Gansevoort,NY,12,3.759,43.1962051,-73.6513967,city_only,"Gansevoort, Town of Northumberland, Saratoga County, New York, 12831, United States",place/village
@@ -2498,7 +2498,7 @@ OPIS Truckstop ID,Truckstop Name,Address,City,State,Rack ID,Retail Price,lat,lon
 64264,CASEYS #4594,US-81 & US-70,Waurika,OK,253,3.07733333,34.1670371,-97.997536,city_only,"Waurika, Jefferson County, Oklahoma, 73573, United States",boundary/administrative
 64265,ASAP GENERAL STORE #101,"I-40, EXIT 84 & US-54",Weatherford,OK,483,3.13233333,35.5261633,-98.7075744,city_only,"Weatherford, Custer County, Oklahoma, 73096, United States",boundary/administrative
 64270,PENN JERSEY DIESEL & TRAILER,"I-95, EXIT 37",Bensalem,PA,160,4.199,40.1045549,-74.951279,city_only,"Bensalem Township, Bucks County, Pennsylvania, United States",boundary/administrative
-64274,RUTTERS #53,"I-83, EXIT 32 & SR-382",Etters,PA,70,3.999,40.2245912,-76.8980809,city_only,"Etters Bridge, Green Lane Drive, Green Lane Farms, Fairview Township, York County, Pennsylvania, 17011, United States",bridge/yes
+64274,RUTTERS #53,"I-83, EXIT 32 & SR-382",Etters,PA,70,3.999,,,not_found,,
 64275,7-ELEVEN #40279,I-276 & US-202 (KING OF PRUSSIA SERVICE PLAZA WB),King Of Prussia,PA,160,3.884,40.0949227,-75.3637256,name_city,"7-Eleven, 100, West Dekalb Pike, Henderson Park, King of Prussia, Upper Merion Township, Montgomery County, Pennsylvania, 19406, United States",shop/convenience
 64282,ONVO TRAVEL PLAZA - HICKORY RUN,"I-80, EXIT 274",White Haven,PA,200,3.58566666,41.06064,-75.774082,city_only,"White Haven, Luzerne County, Pennsylvania, United States",boundary/administrative
 64285,PILOT #4566,"I-85, EXIT 106",Blacksburg,SC,46,3.429,35.1660141,-81.4509705,name_city,"Pilot Travel Center, 2768, East Cherokee Street, Blacksburg, Cherokee County, South Carolina, 29702, United States",amenity/fuel
@@ -2596,7 +2596,7 @@ OPIS Truckstop ID,Truckstop Name,Address,City,State,Rack ID,Retail Price,lat,lon
 64519,BLUE RIDGE TRAVEL PLAZA,"I-81 SOUTHBOUND, EXIT 155",Mountain Top,PA,200,3.649,41.1423516,-75.8936803,city_only,"Mountain Top, Wright Township, Luzerne County, Pennsylvania, 18707, United States",boundary/census
 64520,LOVES TRAVEL STOP #222,"I-70/US-35, EXIT 149B & US/35/SR-38",Richmond,IN,375,3.949,39.8704427,-84.9328191,name_city,"Love's Travel Stop, 2698, US 35;SR 38, Richmond, Wayne County, Indiana, 47374, United States",highway/services
 64521,CHOCTAW TRAVEL PLAZA #635,US-259/SR-3,Broken Bow,OK,560,2.999,34.0298629,-94.7389659,city_only,"Broken Bow, McCurtain County, Oklahoma, United States",boundary/administrative
-64523,SKY CITY TRAVEL CENTER,"I-40, EXIT 102 NORTH",Pueblo Of Acoma,NM,580,3.28066666,34.8960604,-107.5819746,city_only,"Pueblo of Acoma Historical Marker, Acoma Pueblo, Cibola County, New Mexico, United States",leisure/park
+64523,SKY CITY TRAVEL CENTER,"I-40, EXIT 102 NORTH",Pueblo Of Acoma,NM,580,3.28066666,,,not_found,,
 64524,FLYING J TRAVEL PLAZA #790,"ST 401, EXIT 579",Napanee                                 ,ON,720,4.6295456,44.2473883,-76.9505543,city_only,"Greater Napanee, Lennox and Addington County, Eastern Ontario, Ontario, Canada",boundary/administrative
 64524,FLYING J TRAVEL PLAZA #790,"ST 401, EXIT 579",Napanee                                 ,ON,720,4.62238967,44.2473883,-76.9505543,city_only,"Greater Napanee, Lennox and Addington County, Eastern Ontario, Ontario, Canada",boundary/administrative
 64524,FLYING J TRAVEL PLAZA #790,"ST 401, EXIT 579",Napanee                                 ,ON,720,4.63022827,44.2473883,-76.9505543,city_only,"Greater Napanee, Lennox and Addington County, Eastern Ontario, Ontario, Canada",boundary/administrative
@@ -2639,7 +2639,7 @@ OPIS Truckstop ID,Truckstop Name,Address,City,State,Rack ID,Retail Price,lat,lon
 64648,QUICK FUEL #2203,"I-20, EXIT 14",Atlanta,GA,18,3.319,33.7544657,-84.3898151,city_only,"Atlanta, Fulton County, Georgia, United States",boundary/administrative
 64651,QUICK FUEL #2101,I-465,Indianapolis,IN,375,3.869,39.734552,-86.2562535,name_city,"Quick Fuel, Profit Drive, Drexel Gardens, Indianapolis, Wayne Township, Marion County, Indiana, 46241, United States",amenity/fuel
 64654,Fast Stop,"I-10, EXIT 177",Saint Gabriel                           ,LA,600,3.699,30.2576953,-91.0992706,city_only,"Saint Gabriel, Iberville Parish, Louisiana, United States",boundary/administrative
-64655,ONE9 #7937,"I-85/I-40, EXIT 132",Mc Leansville,NC,65,3.399,36.1784621,-79.6780605,city_only,"Mc Leansville Road, Guilford County, North Carolina, 27214, United States",highway/secondary
+64655,ONE9 #7937,"I-85/I-40, EXIT 132",Mc Leansville,NC,65,3.399,,,not_found,,
 64656,QUICK FUEL #2601,SR-27,Charlotte,NC,46,3.51233333,35.2272086,-80.8430827,city_only,"Charlotte, Mecklenburg County, North Carolina, United States",boundary/administrative
 64660,QUICK FUEL #1005,SR-59 & SR-164,Waukesha,WI,444,3.623,43.0115598,-88.2316352,city_only,"Waukesha, Waukesha County, Wisconsin, United States",boundary/administrative
 64662,QUICK FUEL #1011,"I-94, EXIT 100",Milwaukee,WI,444,3.52066666,43.0005644,-87.905143,name_city,"Quick Pick, South Howell Avenue, Bay View, Milwaukee, Milwaukee County, Wisconsin, 53207, United States",amenity/fuel
@@ -2890,7 +2890,7 @@ OPIS Truckstop ID,Truckstop Name,Address,City,State,Rack ID,Retail Price,lat,lon
 65387,MAPLEFIELDS,SR-22 & SR-442,Peru,NY,235,3.799,44.578486,-73.527031,city_only,"Town of Peru, Clinton County, New York, United States",boundary/administrative
 65392,CIRCLE K #4707622,"I-90, EXIT 41",Seneca Falls,NY,220,3.999,42.9604871,-76.8456539,name_city,"Circle K, 1347, NY 318, Magee, Town of Seneca Falls, Seneca County, New York, 13148, United States",amenity/fuel
 65395,BELLSTORES #132,US-30 & SR-60,Ashland,OH,249,3.499,40.8613996,-82.282063,name_city,"BellStores, East Main Street, Ashland, Ashland County, Ohio, 44805, United States",shop/convenience
-65398,QUICK FUEL #2306,"I-480, EXIT 12",Brookpark,OH,305,3.669,41.4197915,-81.8238184,city_only,"Brookpark, 18010, Brookpark Road, Brook Park, Cuyahoga County, Ohio, 44070, United States",railway/station
+65398,QUICK FUEL #2306,"I-480, EXIT 12",Brookpark,OH,305,3.669,,,not_found,,
 65400,NORTHSIDE FUEL STOP,US-30 & SR-19,Bucyrus,OH,411,3.50733333,40.8083909,-82.9754649,city_only,"Bucyrus, Crawford County, Ohio, 44820, United States",boundary/administrative
 65406,MOBIL,"I-90/SR-2, EXIT 182B",Cleveland,OH,305,3.76566666,41.4996574,-81.6936772,city_only,"Cleveland, Cuyahoga County, Ohio, United States",boundary/administrative
 65411,CLARKS PUMP N SHOP #10,SR- 32,Jackson,OH,315,3.699,39.0520169,-82.6365537,city_only,"Jackson, Lick Township, Jackson County, Ohio, 45640, United States",boundary/administrative
@@ -2927,15 +2927,15 @@ OPIS Truckstop ID,Truckstop Name,Address,City,State,Rack ID,Retail Price,lat,lon
 65490,PILOT TRAVEL CENTER #422,"I-85, EXIT 41 & US-29",Newnan,GA,18,3.699,33.3806716,-84.7996573,city_only,"Newnan, Coweta County, Georgia, 30263, United States",boundary/administrative
 65490,PILOT TRAVEL CENTERS #422,"I-85, EXIT 41 & US-29",Newnan,GA,18,3.699,33.3806716,-84.7996573,city_only,"Newnan, Coweta County, Georgia, 30263, United States",boundary/administrative
 65494,FLYING J TRAVEL PLAZA #633,"I-20, EXIT 138",Union Point,GA,135,3.859,33.6156831,-83.0745969,city_only,"Union Point, Greene County, Georgia, United States",boundary/administrative
-65496,FLYING J #463,HWY 402 EXIT 25,Wyoming,ON,620,4.45193778,42.9481095,-82.1207921,city_only,"Wyoming, 00, Broadway Street, Wyoming, Plympton-Wyoming, Lambton County, Southwestern Ontario, Ontario, N0N 1T0, Canada",railway/station
-65496,FLYING J #463,HWY 402 EXIT 25,Wyoming,ON,620,4.45292033,42.9481095,-82.1207921,city_only,"Wyoming, 00, Broadway Street, Wyoming, Plympton-Wyoming, Lambton County, Southwestern Ontario, Ontario, N0N 1T0, Canada",railway/station
-65496,FLYING J #463,HWY 402 EXIT 25,Wyoming,ON,620,4.46276974,42.9481095,-82.1207921,city_only,"Wyoming, 00, Broadway Street, Wyoming, Plympton-Wyoming, Lambton County, Southwestern Ontario, Ontario, N0N 1T0, Canada",railway/station
-65496,FLYING J #463,HWY 402 EXIT 25,Wyoming,ON,620,4.46211176,42.9481095,-82.1207921,city_only,"Wyoming, 00, Broadway Street, Wyoming, Plympton-Wyoming, Lambton County, Southwestern Ontario, Ontario, N0N 1T0, Canada",railway/station
-65496,FLYING J #463,HWY 402 EXIT 25,Wyoming,ON,620,4.45390331,42.9481095,-82.1207921,city_only,"Wyoming, 00, Broadway Street, Wyoming, Plympton-Wyoming, Lambton County, Southwestern Ontario, Ontario, N0N 1T0, Canada",railway/station
-65496,FLYING J #463,HWY 402 EXIT 25,Wyoming,ON,620,4.45521463,42.9481095,-82.1207921,city_only,"Wyoming, 00, Broadway Street, Wyoming, Plympton-Wyoming, Lambton County, Southwestern Ontario, Ontario, N0N 1T0, Canada",railway/station
+65496,FLYING J #463,HWY 402 EXIT 25,Wyoming,ON,620,4.45193778,42.949297,-82.1187333,city_only,"Wyoming, Plympton-Wyoming, Lambton County, Southwestern Ontario, Ontario, N0N 1T0, Canada",place/village
+65496,FLYING J #463,HWY 402 EXIT 25,Wyoming,ON,620,4.45292033,42.949297,-82.1187333,city_only,"Wyoming, Plympton-Wyoming, Lambton County, Southwestern Ontario, Ontario, N0N 1T0, Canada",place/village
+65496,FLYING J #463,HWY 402 EXIT 25,Wyoming,ON,620,4.46276974,42.949297,-82.1187333,city_only,"Wyoming, Plympton-Wyoming, Lambton County, Southwestern Ontario, Ontario, N0N 1T0, Canada",place/village
+65496,FLYING J #463,HWY 402 EXIT 25,Wyoming,ON,620,4.46211176,42.949297,-82.1187333,city_only,"Wyoming, Plympton-Wyoming, Lambton County, Southwestern Ontario, Ontario, N0N 1T0, Canada",place/village
+65496,FLYING J #463,HWY 402 EXIT 25,Wyoming,ON,620,4.45390331,42.949297,-82.1187333,city_only,"Wyoming, Plympton-Wyoming, Lambton County, Southwestern Ontario, Ontario, N0N 1T0, Canada",place/village
+65496,FLYING J #463,HWY 402 EXIT 25,Wyoming,ON,620,4.45521463,42.949297,-82.1187333,city_only,"Wyoming, Plympton-Wyoming, Lambton County, Southwestern Ontario, Ontario, N0N 1T0, Canada",place/village
 65513,GETGO #3602,"I-76, EXIT 146 & I-99, EXIT 1 & US-220",Bedford                                 ,PA,14,4.09233333,40.0186921,-78.5039069,city_only,"Bedford, Bedford County, Pennsylvania, United States",boundary/administrative
 65514,ONVO TRAVEL PLAZA,"I-78, EXIT 13 & SR- 501",Bethel,PA,70,3.34733333,40.3442363,-80.0428314,city_only,"Bethel, Bethel Park, Allegheny County, Pennsylvania, 15102, United States",place/hamlet
-65518,KWIK FILL #239,ST 51,Crescent                                ,PA,165,3.799,40.2005873,-76.97368,city_only,"Crescent, 571, Independence Avenue, Winding Heights, Mechanicsburg, Cumberland County, Pennsylvania, 17055, United States",building/warehouse
+65518,KWIK FILL #239,ST 51,Crescent                                ,PA,165,3.799,,,not_found,,
 65521,RUTTERS #17,US-15 & SR-234,East Berlin,PA,70,4.294,39.937597,-76.9785892,city_only,"East Berlin, Adams County, Pennsylvania, United States",boundary/administrative
 65522,TURKEY HILL #950324,US-322 & SR-23/SR-897,East Earl,PA,208,3.78566666,40.1144734,-76.0322028,name_city,"Turkey Hill, 168, Toddy Drive, East Earl, East Earl Township, Lancaster County, Pennsylvania, 17519, United States",amenity/fuel
 65523,SAC SHOP #512,US-30,Everett                                 ,PA,14,4.099,40.0114711,-78.3733484,city_only,"Everett, Bedford County, Pennsylvania, 15537, United States",boundary/administrative
@@ -2954,7 +2954,7 @@ OPIS Truckstop ID,Truckstop Name,Address,City,State,Rack ID,Retail Price,lat,lon
 65573,SPEEDWAY/7fleet #4587,US-501,Aynor,SC,205,3.124,33.9998881,-79.1994874,city_only,"Aynor, Horry County, South Carolina, United States",boundary/administrative
 65578,CIRCLE K #2723355,US-52,North Charleston,SC,42,3.399,32.9015383,-80.0769402,name_city,"Circle K, Cross County Road, North Charleston, Charleston County, South Carolina, 29404, United States",amenity/fuel
 65587,HOT SPOT #2022,US-25/US-76,Honea Path,SC,30,2.909,34.5113722,-82.3069788,name_city,"Hot Spot, 11504, Augusta Road, Honea Path, Greenville County, South Carolina, 29654, United States",shop/convenience
-65588,SPEEDWAY #2836,US-17,Johns Island,SC,42,3.069,32.7024009,-80.0481488,city_only,"Johns Island, Fabius Maximus Rd, Johns Island, Charleston County, South Carolina, 29455, United States",amenity/place_of_worship
+65588,SPEEDWAY #2836,US-17,Johns Island,SC,42,3.069,32.69485,-80.03425,city_only,"Johns Island, Charleston, Charleston County, South Carolina, 29455, United States",boundary/administrative
 65593,CIRCLE K #2723441,"I-82, EXIT 73 & SR-773",Prosperity,SC,210,3.11566666,34.2098669,-81.5338576,city_only,"Prosperity, Newberry County, South Carolina, United States",boundary/administrative
 65594,PILOT #4567,I-77 EXIT 77,Rock Hill,SC,46,3.149,34.9248667,-81.0250784,city_only,"Rock Hill, York County, South Carolina, United States",boundary/administrative
 65598,LEES QUICK STOP,US-52 & SR-45,Saint Stephen,SC,42,3.41566666,33.4043339,-79.9217432,city_only,"Saint Stephen, St. Stephen, Berkeley County, South Carolina, 29479, United States",place/hamlet
@@ -4487,7 +4487,7 @@ OPIS Truckstop ID,Truckstop Name,Address,City,State,Rack ID,Retail Price,lat,lon
 68005,WESSON,"I-84, EXIT 22, SR-8, EXIT 22",Waterbury,CT,100,4.179,41.5541144,-73.0435615,city_only,"Waterbury, Naugatuck Valley Planning Region, Connecticut, United States",boundary/administrative
 68007,Highland oil,US-412,Hardy,AR,435,3.269,36.3158994,-91.4826388,city_only,"Hardy, Sharp County, Arkansas, 72542, United States",boundary/administrative
 68008,FAST LANE #3,US-64 & US-49,Mc Crory,AR,435,3.399,,,not_found,,
-68009,CIRCLE K #2741779,"US-270, EXIT 2",Hot Springs National Park,AR,695,3.369,34.5290712,-93.0301402,city_only,"Hot Springs National Park, Hot Springs, Garland County, Arkansas, United States",leisure/nature_reserve
+68009,CIRCLE K #2741779,"US-270, EXIT 2",Hot Springs National Park,AR,695,3.369,,,not_found,,
 68012,ROYAL FARMS #120,US-13/CR-16,Greenwood                               ,DE,194,3.259,38.8051836,-75.5832887,name_city,"Royal Farms, 2, Schulz Road, Greenwood, Sussex County, Delaware, 19950, United States",shop/convenience
 68016,Chevron #386730,"I-10, EXIT 139",Phoenix                                 ,AZ,930,3.299,33.4661293,-111.9877486,name_city,"Chevron, 4352, East McDowell Road, Camelback East, Phoenix, Maricopa County, Arizona, 85008, United States",amenity/fuel
 68017,TEXACO,SR-89,Prescott,AZ,930,3.739,34.5456406,-112.4587731,name_city,"Texaco, North Arizona Avenue, Whipple, Prescott, Yavapai County, Arizona, 86313, United States",amenity/fuel
@@ -4625,7 +4625,7 @@ OPIS Truckstop ID,Truckstop Name,Address,City,State,Rack ID,Retail Price,lat,lon
 68330,SHREES TRUCK STOP,"I-90, EXIT 149 & SR-281",George                                  ,WA,920,3.759,47.0807166,-119.85709,city_only,"George, Grant County, Washington, 98824, United States",boundary/administrative
 68332,CIRCLE K #2701526,"I-40, EXIT 208",Colfax,NC,65,2.95733333,36.1126365,-80.0144842,city_only,"Colfax, Guilford County, North Carolina, 27235, United States",place/hamlet
 68333,GO MART FOOD STORE #106,US-250/US-219/SR-92/SR-55,Elkins                                  ,WV,44,3.499,38.925927,-79.8466552,city_only,"Elkins, Randolph County, West Virginia, 26241, United States",boundary/administrative
-68335,PILOT #481,"I-75, EXIT 20",Mc Donald,TN,285,3.599,36.1158842,-86.7064336,city_only,"Mc Donald Drive, Glencliff, Nashville, Davidson County, Middle Tennessee, Tennessee, 37217, United States",highway/residential
+68335,PILOT #481,"I-75, EXIT 20",Mc Donald,TN,285,3.599,,,not_found,,
 68337,SPEEDWAY #1426,US-30 & SR-51,Merrillville,IN,290,3.88566666,41.4724832,-87.3847875,name_city,"Speedway, 3990, West 81st Avenue, Merrillville, Ross Township, Lake County, Indiana, 46410, United States",amenity/fuel
 68339,LOVES TRAVEL STOP #464,"I-10, EXIT 523 & US-87",Comfort,TX,740,3.21233333,29.9819131,-98.9022357,name_city,"Love's Travel Stop, Loop 1087, Comfort, Kendall County, Texas, 70813, United States",highway/services
 68343,HUTCH'S #119,I-40 EXIT 40,Elk City,OK,483,2.969,35.3931135,-99.4054573,name_city,"Hutch's, West 20th Street, Elk City, Beckham County, Oklahoma, 73644, United States",amenity/fuel
@@ -4939,19 +4939,19 @@ OPIS Truckstop ID,Truckstop Name,Address,City,State,Rack ID,Retail Price,lat,lon
 69015,Joe's Kwik Mart,"I-75, EXIT 7 & US-11 & US-64",Chattanooga,TN,285,3.149,35.0609728,-85.1365135,name_city,"Joe's Kwik Mart, 7420, Bonny Oaks Drive, TDOT Region 2, Silverdale, Chattanooga, Hamilton County, East Tennessee, Tennessee, 37421, United States",shop/convenience
 69016,SPEEDWAY #7606,"I-75, EXIT 25",Corbin,KY,405,3.519,36.9179547,-84.1220639,name_city,"Speedway, Corbin Center Drive, Corbin, Whitley County, Kentucky, 40701, United States",amenity/fuel
 69017,SHELL,US-71 & SR-511,Bossier City,LA,745,2.999,32.515887,-93.7336536,city_only,"Bossier City, Bossier Parish, Louisiana, United States",boundary/administrative
-69021,SWEET CRUDE TRAVEL CENTER,HWY 85 & SR 200,Grassy Butte,ND,273,3.64066666,47.3952923,-103.2490767,city_only,"Grassy Butte, McKenzie County, North Dakota, 58634, United States",natural/peak
+69021,SWEET CRUDE TRAVEL CENTER,HWY 85 & SR 200,Grassy Butte,ND,273,3.64066666,47.3925145,-103.2479655,city_only,"Grassy Butte, McKenzie County, North Dakota, 58634, United States",place/hamlet
 69027,SPINX #134 (DISCOUNT AVAILABLE),SR-55 & 418,Simpsonville                            ,SC,30,3.06566666,34.7135973,-82.255503,name_city,"Spinx, 625, Fairview Road, Simpsonville, Greenville County, South Carolina, 29680, United States",shop/convenience
 69028,LOVES TRAVEL STOP #427,"I-75, EXIT 51",Dayton,OH,317,3.319,39.7340706,-84.2094288,name_city,"Love's Travel Stop, South Edwin C. Moses Boulevard, Patterson, Dayton, Montgomery County, Ohio, 45408, United States",highway/services
 69029,LOVES TRAVEL STOP #461,"I-70, EXIT 246A",Saint Louis,MO,540,3.114,38.6853688,-90.2166843,name_city,"Love's Travel Stop, Carrie Avenue, North Riverfront, Saint Louis, Missouri, 63147, United States",highway/services
 69030,LOVES TRAVEL STOP #424,"I-20, EXIT 51",Lexington,SC,135,3.40733333,33.9804494,-81.2374167,city_only,"Lexington, Lexington County, South Carolina, United States",boundary/administrative
 69031,LOVES TRAVEL STOP #492,"I-20, EXIT 42 & US-285",Pecos,TX,710,3.455,31.3993388,-103.4798982,name_city,"Love's Travel Stop, North US Highway 285, Pecos, Reeves County, Texas, 79722, United States",highway/services
 69031,LOVES TRAVEL STOPS #492,"I-20, EXIT 42 & US-285",Pecos,TX,710,3.449,31.4254143,-103.4952894,city_only,"Pecos, Reeves County, Texas, 79722, United States",boundary/administrative
-69032,FLYING J #866,HIGHWAY 11/17,Pass Lake,ON,700,4.3415277,48.5620747,-88.7363291,city_only,"Pass Lake, Unorganized Thunder Bay District, Thunder Bay District, Northwestern Ontario, Ontario, Canada",water/lake
-69032,FLYING J #866,HIGHWAY 11/17,Pass Lake,ON,700,4.90860199,48.5620747,-88.7363291,city_only,"Pass Lake, Unorganized Thunder Bay District, Thunder Bay District, Northwestern Ontario, Ontario, Canada",water/lake
-69032,FLYING J #866,HIGHWAY 11/17,Pass Lake,ON,700,4.89957219,48.5620747,-88.7363291,city_only,"Pass Lake, Unorganized Thunder Bay District, Thunder Bay District, Northwestern Ontario, Ontario, Canada",water/lake
-69032,FLYING J #866,HIGHWAY 11/17,Pass Lake,ON,700,4.89740997,48.5620747,-88.7363291,city_only,"Pass Lake, Unorganized Thunder Bay District, Thunder Bay District, Northwestern Ontario, Ontario, Canada",water/lake
-69032,FLYING J #866,HIGHWAY 11/17,Pass Lake,ON,700,4.90932581,48.5620747,-88.7363291,city_only,"Pass Lake, Unorganized Thunder Bay District, Thunder Bay District, Northwestern Ontario, Ontario, Canada",water/lake
-69032,FLYING J #866,HIGHWAY 11/17,Pass Lake,ON,700,4.90101472,48.5620747,-88.7363291,city_only,"Pass Lake, Unorganized Thunder Bay District, Thunder Bay District, Northwestern Ontario, Ontario, Canada",water/lake
+69032,FLYING J #866,HIGHWAY 11/17,Pass Lake,ON,700,4.3415277,,,not_found,,
+69032,FLYING J #866,HIGHWAY 11/17,Pass Lake,ON,700,4.90860199,,,not_found,,
+69032,FLYING J #866,HIGHWAY 11/17,Pass Lake,ON,700,4.89957219,,,not_found,,
+69032,FLYING J #866,HIGHWAY 11/17,Pass Lake,ON,700,4.89740997,,,not_found,,
+69032,FLYING J #866,HIGHWAY 11/17,Pass Lake,ON,700,4.90932581,,,not_found,,
+69032,FLYING J #866,HIGHWAY 11/17,Pass Lake,ON,700,4.90101472,,,not_found,,
 69036,REFUEL #1038,US-15 & SR-151,Hartsville,SC,46,3.36566666,34.3740431,-80.0734005,city_only,"Hartsville, Darlington County, South Carolina, 29550, United States",boundary/administrative
 69037,CIRCLE K #2723192,US-64 & US-421,Siler City,NC,177,2.949,35.7333188,-79.4355693,name_city,"Circle K, 1740, US 64, Siler City, Chatham County, North Carolina, 27344, United States",shop/convenience
 69038,REFUEL #1028,US-421/US-52 & US-15,Society Hill,SC,63,3.399,34.5126567,-79.8508976,city_only,"Society Hill, Darlington County, South Carolina, United States",boundary/administrative
@@ -5784,7 +5784,7 @@ OPIS Truckstop ID,Truckstop Name,Address,City,State,Rack ID,Retail Price,lat,lon
 70236,LOVES TRAVEL STOP #733,"I-25, EXIT 347",Las Vegas,NM,580,3.489,35.6201494,-105.2080945,name_city,"Love's Travel Stop, North Grand Avenue, Las Vegas, San Miguel County, New Mexico, 87701, United States",highway/services
 70238,ROAD RANGER #275,"I-10, EXIT 400 & US-277",Sonora,TX,740,3.549,30.5809707,-100.6458773,name_city,"Road Ranger, US 277, Sonora, Sutton County, Texas, 76950, United States",highway/services
 70239,GOOD 2 GO #717,"I-25, EXIT 145",Colorado Springs,CO,803,3.479,38.9401774,-104.7001907,name_city,"Good 2 Go, 7491, Black Forest Road, Colorado Springs, El Paso County, Colorado, 80923, United States",shop/convenience
-70240,MAVERIK COUNTRY STORE #370,"I-15, EXIT 10",Saint George,UT,910,3.5415,37.1097636,-113.553483,city_only,"East Saint George Boulevard, Middleton, St. George, Washington County, Utah, 84690, United States",highway/unclassified
+70240,MAVERIK COUNTRY STORE #370,"I-15, EXIT 10",Saint George,UT,910,3.5415,,,not_found,,
 70241,MAVERIK COUNTRY STORE #460,SR-88,Minden,NV,966,3.52566666,38.9565145,-119.7700488,city_only,"Minden, Douglas County, Nevada, 89423, United States",boundary/census
 70242,ROAD RANGER #276,"I-35, EXIT 342A",Waco,TX,765,3.049,31.5545147,-97.1325618,city_only,"Waco, McLennan County, Texas, United States",boundary/administrative
 70243,CASEYS #4415,US-68 & US-31W /SR-526,Bowling Green,KY,460,2.999,36.9929203,-86.4428677,city_only,"Bowling Green, Warren County, Kentucky, 42101, United States",boundary/administrative
@@ -5942,7 +5942,7 @@ OPIS Truckstop ID,Truckstop Name,Address,City,State,Rack ID,Retail Price,lat,lon
 70408,BOLLA MARKET,"I-495, EXIT 64",Medford,NY,83,3.639,40.8228192,-72.9887443,city_only,"Medford, Town of Brookhaven, Suffolk County, New York, 11763, United States",boundary/census
 70408,BOLLA MARKET,"I-495, EXIT 64",Medford,NY,83,3.539,40.8228192,-72.9887443,city_only,"Medford, Town of Brookhaven, Suffolk County, New York, 11763, United States",boundary/census
 70409,SPEEDWAY #6512,"I-196, EXIT 49 & SR-40",Holland,MI,456,3.899,42.7836624,-86.0797302,name_city,"Speedway, 635, East 16th Street, Holland, Ottawa County, Michigan, 49423, United States",shop/convenience
-70410,SPEEDWAY #4107,I-285 & US-78,Stone Mountain,GA,18,3.529,33.8062166,-84.1457505,city_only,"Stone Mountain, DeKalb County, Georgia, 30087, United States",natural/peak
+70410,SPEEDWAY #4107,I-285 & US-78,Stone Mountain,GA,18,3.529,33.8080924,-84.1706273,city_only,"Stone Mountain, DeKalb County, Georgia, 80083, United States",boundary/administrative
 70411,MARATHON,SR-72,Elberton,GA,16,3.899,34.1112226,-82.8670839,city_only,"Elberton, Elbert County, Georgia, United States",boundary/administrative
 70413,CASEYS #3782,US-169 & SR-2,Mount Ayr,IA,320,3.164,40.7104927,-94.2228777,name_city,"Casey's, 1305, East South Street, Mount Ayr, Ringgold County, Iowa, 50854, United States",amenity/restaurant
 70415,GARDEN TRUCK STOP,SR-55 /EXIT 35,Vineland,NJ,150,3.999,39.5224592,-75.0631742,name_city,"Garden Truck Stop, 2114, West Garden Road, Forest Grove, Vineland, Cumberland County, New Jersey, 08360, United States",building/yes
@@ -6291,7 +6291,7 @@ OPIS Truckstop ID,Truckstop Name,Address,City,State,Rack ID,Retail Price,lat,lon
 70790,LOVES TRAVEL STOP #788,"I-70, EXIT 175",New Florence,MO,540,3.12233333,38.8971632,-91.4537736,name_city,"Love's Travel Stop, MO 19, New Florence, Montgomery County, Missouri, 63363, United States",highway/services
 70791,LOVES TRAVEL STOP #791,"I-40, EXIT 126",Holladay,TN,460,3.12233333,35.870619,-88.1458719,city_only,"Holladay, Benton County, West Tennessee, Tennessee, United States",place/hamlet
 70792,ANEW TRAVEL CENTER,US-6/34 & CR-410,Cambridge,NE,475,3.364,40.2852758,-100.1521047,name_city,"Anew Travel Center, 41501, Harvest Drive, Cambridge, Furnas County, Nebraska, 69022, United States",shop/fuel
-70793,LOVES TRAVEL STOPS #119,"I-70, EXIT 160",Green River,UT,835,3.299,40.9391158,-109.5918655,city_only,"Green River, Daggett County, Utah, United States",waterway/flowline
+70793,LOVES TRAVEL STOPS #119,"I-70, EXIT 160",Green River,UT,835,3.299,,,not_found,,
 70793,LOVES TRAVEL STOP #119,"I-70, EXIT 160",Green River,UT,835,3.391,38.995537,-110.18506,name_city,"Love's Travel Stop, West Main Street, Green River, Emery County, Utah, 84525, United States",highway/services
 70794,CASEYS #3747,SR-103 & CR-96,Carey,OH,411,3.17566666,40.9427779,-83.396763,name_city,"Casey's General Store, South Vance Street, The Villas at Sheriden, Carey, Crawford Township, Wyandot County, Ohio, 43316, United States",shop/convenience
 70796,QUICK FUEL #3177,"I-35W, EXIT 56",Fort Worth,TX,637,3.03233333,32.6778425,-97.4164399,name_city,"Quick Track, 4920, Bryant Irvin Road, Cityview Centre, Fort Worth, Tarrant County, Texas, 76132, United States",amenity/fuel
@@ -7056,7 +7056,7 @@ OPIS Truckstop ID,Truckstop Name,Address,City,State,Rack ID,Retail Price,lat,lon
 71708,QUARLES #4936,I-95 Exit 69,Richmond,VA,180,3.699,37.5744378,-77.4666125,name_city,"Quarles, Ellen Road, Richmond, Virginia, 23221, United States",office/company
 71709,MAPCO EXPRESS #7553,SR 153 EXIT 2,Chattanooga,TN,285,2.994,35.1292225,-85.2832586,name_city,"ATM(Mapco Express), 4500, Dayton Boulevard, Knollwood, Red Bank, Chattanooga, Hamilton County, East Tennessee, Tennessee, 37415, United States",building/yes
 71710,KWIK STAR #1180,SR-141,Perry,IA,320,3.06066666,41.8386547,-94.1066411,city_only,"Perry, Spring Valley Township, Dallas County, Iowa, 50220, United States",boundary/administrative
-71712,MAVERIK COUNTRY STORE #693,"I-70, Exit 160 & hwy 191",Green River,UT,810,3.28233333,40.9391158,-109.5918655,city_only,"Green River, Daggett County, Utah, United States",waterway/flowline
+71712,MAVERIK COUNTRY STORE #693,"I-70, Exit 160 & hwy 191",Green River,UT,810,3.28233333,,,not_found,,
 71713,Pilot #1383,"I-555, Exit 39",Jonesboro,AR,435,3.489,35.8051462,-90.6254983,name_city,"Pilot, Commerce Square, Jonesboro, Craighead County, Arkansas, 72404, United States",amenity/fuel
 71713,Pilot Dealer #1383,"I-555, Exit 39",Jonesboro,AR,435,3.439,35.8348088,-90.7045297,city_only,"Jonesboro, Craighead County, Arkansas, United States",boundary/administrative
 71714,RACETRAC #2576,SR-997 & SR-994,Miami,FL,95,3.28733333,25.6260654,-80.3980389,name_city,"RaceTrac, 12800, Southwest 152nd Street, Miami, Miami-Dade County, Florida, 33177, United States",shop/convenience
@@ -7462,7 +7462,7 @@ OPIS Truckstop ID,Truckstop Name,Address,City,State,Rack ID,Retail Price,lat,lon
 72288,S&G #88,I-475 Exit 13 & US-20,Toledo,OH,550,3.009,41.6736098,-83.5886728,name_city,"S&G, Upton Avenue, Toledo, Lucas County, Ohio, 43606, United States",amenity/fuel
 72289,SUNOCO,SR-12 & FM-1136,Orange,TX,610,2.899,30.0929879,-93.7365549,city_only,"Orange, Orange County, Texas, 77630, United States",boundary/administrative
 72290,SUNSTOP,US-19,Thomasville,GA,20,3.28233333,30.8365815,-83.9787808,city_only,"Thomasville, Thomas County, Georgia, 31792, United States",boundary/administrative
-72291,Union 76,US-129,Mc Alpin,FL,75,3.659,30.1396324,-82.9440642,city_only,"Mc Alpin Road, McAlpin, Suwannee County, Florida, 32024, United States",highway/residential
+72291,Union 76,US-129,Mc Alpin,FL,75,3.659,,,not_found,,
 72292,SUNSTOP #336,SR-121 & CR-18,Lake Butler,FL,75,3.59233333,30.0227391,-82.3395574,city_only,"Lake Butler, Union County, Florida, United States",boundary/administrative
 72293,SUNSTOP INLAND DBA ONE9 #1402,I-10 & SR-71,Marianna                                ,FL,20,3.299,30.7743596,-85.2268735,city_only,"Marianna, Jackson County, Florida, 32447, United States",boundary/administrative
 72293,ONE9 #1402,I-10 & SR-71,Marianna                                ,FL,20,3.299,30.7743596,-85.2268735,city_only,"Marianna, Jackson County, Florida, 32447, United States",boundary/administrative
@@ -7551,7 +7551,7 @@ OPIS Truckstop ID,Truckstop Name,Address,City,State,Rack ID,Retail Price,lat,lon
 72413,TROPIC OIL COMPANY,SR-17,Lake Wales,FL,140,3.499,27.9014133,-81.5859099,city_only,"Lake Wales, Polk County, Florida, United States",boundary/administrative
 72418,SHELL,SR-953,Miami                                   ,FL,95,3.479,25.7805993,-80.2151487,name_city,"Shell, Northwest 12th Avenue, Miami, Miami-Dade County, Florida, 33128, United States",shop/convenience
 72419,Denver 39th Ave Cardlock,I-70/US-36 EXIT-281,Denver,CO,800,3.49066666,39.7392364,-104.984862,city_only,"Denver, Colorado, United States",boundary/administrative
-72420,MAVERIK COUNTRY STORE #620,SR-8,Saint George,UT,791,3.46233333,37.1097636,-113.553483,city_only,"East Saint George Boulevard, Middleton, St. George, Washington County, Utah, 84690, United States",highway/unclassified
+72420,MAVERIK COUNTRY STORE #620,SR-8,Saint George,UT,791,3.46233333,,,not_found,,
 72424,MIDDLESEX FOOD STORE,CR-604,Carteret                                ,NJ,79,3.51566666,40.5773266,-74.2282005,city_only,"Carteret, Middlesex County, New Jersey, 07008, United States",boundary/administrative
 72425,MINUTEMAN FOOD MART #18,SR-87,Tar Heel                                ,NC,63,4.619,34.7331708,-78.7904075,city_only,"Tar Heel, Bladen County, North Carolina, United States",boundary/administrative
 72428,QUIKTRIP #7249,US 80 E,Flowood,MS,705,2.91566666,32.2791481,-90.1568856,name_city,"QuikTrip, 716, MS 468, Flowood, Rankin County, Mississippi, 39232, United States",shop/convenience
@@ -7873,7 +7873,7 @@ OPIS Truckstop ID,Truckstop Name,Address,City,State,Rack ID,Retail Price,lat,lon
 72788,MAVERIK #700,I-25 EXIT 215,Denver,CO,800,3.289,39.7392364,-104.984862,city_only,"Denver, Colorado, United States",boundary/administrative
 72789,RACETRAC #237,HWY 30 & ROBERT WILSON RD,Gonzales                                ,LA,600,3.17233333,30.2110114,-90.9543579,name_city,"RaceTrac, South Robert Wilson Road, Gonzales, Ascension Parish, Louisiana, 70737, United States",amenity/fuel
 72791,LOVES TRAVEL STOP #850,SR-491 & RD. G,Cortez,CO,614,3.48233333,37.3129599,-108.6082389,name_city,"Love's Travel Stop, 7006, County Road G, Cortez, Montezuma County, Colorado, 81321, United States",highway/services
-72792,QUICKLEES,"I-190, EXIT 23",Niagara Falls,NY,38,3.999,43.084841,-79.0701786,city_only,"Niagara Falls, City of Niagara Falls, Niagara County, New York, United States",waterway/waterfall
+72792,QUICKLEES,"I-190, EXIT 23",Niagara Falls,NY,38,3.999,43.08436,-79.0614686,city_only,"City of Niagara Falls, Niagara County, New York, United States",boundary/administrative
 72793,TA EXPRESS BLAINE #917,"I-5, Exit 275",Blaine,WA,850,4.139,48.9881108,-122.743575,city_only,"Blaine, Whatcom County, Washington, 98231, United States",boundary/administrative
 72795,REFUEL #1337,SR-45/CR-1625,Buda                                    ,TX,595,2.999,30.0952163,-97.8161707,name_city,"Refuel, 14444, South Interstate 35, Buda, Hays County, Texas, 78610, United States",shop/convenience
 72796,PILOT #1399,"SR-303, EXIT 107",Litchfield Park,AZ,930,3.599,33.4933796,-112.358124,city_only,"Litchfield Park, Maricopa County, Arizona, United States",boundary/administrative
