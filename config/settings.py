@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'spotter.apps.SpotterConfig'
 ]
 
 MIDDLEWARE = [
@@ -125,3 +126,5 @@ MAILERS = {
         'BACKEND': 'django.core.mail.backends.console.EmailBackend',
     },
 }
+
+GEOCODED_STATIONS_CSV = BASE_DIR / "data" / "fuel-stations-geocoded.csv"
