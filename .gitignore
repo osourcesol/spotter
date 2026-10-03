@@ -22,3 +22,6 @@ staticfiles/
 
 # Spotter provided csv file
 fuel-prices-for-be-assessment.csv
+
+# OpenStreetMap query cache
+data/geocode-cache.json
