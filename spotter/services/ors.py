@@ -1,4 +1,5 @@
 from dataclasses import dataclass
+from pyexpat import features
 import numpy as np
 import requests
 from django.conf import settings
@@ -6,6 +7,9 @@ from django.conf import settings
 from .geo import METERS_PER_MILE, haversine_mi
 
 ORS_URL = "https://api.openrouteservice.org/v2/directions/driving-car/geojson"
+GEOCODE_URL = "https://api.openrouteservice.org/geocode/search"
+
+COARSE_LAYERS = {"county", "macrocounty", "region", "macroregion", "country", "coarse"}
 
 _session = requests.Session()
 
@@ -95,3 +99,50 @@ def fetch_route(start: tuple[float, float], finish: tuple[float, float]) -> Rout
         raise RoutingError("Returned an unexpected response.") from e
 
     return build_route(coordinates, distance)
+
+def geocode_us(text: str) -> tuple[float, float, str] | None:
+    if not settings.ORS_API_KEY:
+        raise RoutingError("ORS_API_KEY is not configured", 500)
+
+    # find a place in US by name or address
+    try:
+        resp = _session.get(
+            GEOCODE_URL,
+            timeout=(3,10),
+            headers={"Authorization": settings.ORS_API_KEY},
+            params={"text": text, "boundary.country": "US", "size": 1}
+        )
+    except requests.RequestException as e:
+        raise RoutingError(f"Geocoding provider unreachable: {e}") from e
+
+    if resp.status_code in (401, 403):
+        raise RoutingError("Either unautorhized or reached maximum daily limit", 502)
+
+    if resp.status_code == 429:
+        raise RoutingError("Reached rate limit, please try again shortly.", 503)
+    
+    if 400 <= resp.status_code < 500:
+        raise RoutingError(_error_message(resp), 422)
+
+    if not resp.ok:
+        raise RoutingError(f"ORS error ({resp.status_code}).", 502)
+    
+    try:
+        features = resp.json().get("features") or []
+        
+        if not features:
+            return None
+
+        properties = features[0].get("properties", {})
+
+        if properties.get("layer") in COARSE_LAYERS:
+            return None
+        
+        lon, lat = features[0]["geometry"]["coordinates"][:2]
+        label = properties.get("label") or text
+
+        return float(lat), float(lon), label
+    except(KeyError, IndexError, TypeError, ValueError, AttributeError) as e:
+        raise RoutingError("Geocoding provider returned an unexpected response") from e
+
+    

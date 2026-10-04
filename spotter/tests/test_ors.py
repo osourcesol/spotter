@@ -5,7 +5,7 @@ import requests
 from django.test import SimpleTestCase, override_settings
 
 from spotter.services.geo import METERS_PER_MILE, haversine_mi
-from spotter.services.ors import RoutingError, build_route, fetch_route
+from spotter.services.ors import RoutingError, build_route, fetch_route, geocode_us
 
 START, FINISH = (36.0, -100.0), (36.0, -99.0)
 
@@ -98,3 +98,63 @@ class FetchRouteTests(SimpleTestCase):
         exc, post = self.call(fake_response(200, good_body(1000)))
         self.assertEqual(exc.status, 500)
         post.assert_not_called()
+
+
+def geocode_body(lon=-118.2437, lat=34.0522, label="Los Angeles, CA, USA", layer="locality"):
+    return {"features": [{"geometry": {"coordinates": [lon, lat]}, "properties": {"label": label, "layer": layer}}]}
+
+
+@override_settings(ORS_API_KEY="test-key")
+class GeocodeUsTests(SimpleTestCase):
+    def call(self, response=None, side_effect=None):
+        with mock.patch("spotter.services.ors._session.get", return_value=response, side_effect=side_effect) as get:
+            try:
+                return geocode_us("Los Angeles, CA"), get
+            except RoutingError as exc:
+                return exc, get
+
+    def test_success_returns_lat_lon_label_and_sends_one_correct_request(self):
+        result, get = self.call(fake_response(200, geocode_body()))
+        self.assertEqual(result, (34.0522, -118.2437, "Los Angeles, CA, USA"))   # lat first, lon second
+        self.assertEqual(get.call_count, 1)
+        kwargs = get.call_args.kwargs
+        self.assertEqual(kwargs["params"], {"text": "Los Angeles, CA", "boundary.country": "US", "size": 1})
+        self.assertEqual(kwargs["headers"], {"Authorization": "test-key"})       # key not put in the URL
+        self.assertIsNotNone(kwargs["timeout"])
+
+    def test_no_match_returns_none(self):
+        result, _ = self.call(fake_response(200, {"features": []}))
+        self.assertIsNone(result)
+    
+    def test_a_whole_state_county_or_country_is_not_accepted_as_a_location(self):
+        for layer in ("region", "county", "country", "macroregion"):
+            result, _ = self.call(fake_response(200, geocode_body(label="Texas, USA", layer=layer)))
+            self.assertIsNone(result, layer)
+
+    def test_specific_places_are_accepted(self):
+        for layer in ("locality", "address", "venue", "neighbourhood", "localadmin"):
+            result, _ = self.call(fake_response(200, geocode_body(layer=layer)))
+            self.assertEqual(result[2], "Los Angeles, CA, USA", layer)
+
+    def test_a_result_without_a_layer_is_still_accepted(self):
+        body = {"features": [{"geometry": {"coordinates": [-118.2, 34.0]}, "properties": {"label": "X"}}]}
+        result, _ = self.call(fake_response(200, body))
+        self.assertEqual(result, (34.0, -118.2, "X"))
+
+    def test_errors_are_mapped(self):
+        for resp, expected in [(fake_response(403, {"error": "x"}), 502), (fake_response(429, {}), 503),
+                               (fake_response(500, {}), 502)]:
+            exc, _ = self.call(resp)
+            self.assertEqual(exc.status, expected)
+        exc, _ = self.call(side_effect=requests.Timeout("slow"))
+        self.assertEqual(exc.status, 502)
+
+    def test_unexpected_body_becomes_502(self):
+        exc, _ = self.call(fake_response(200, {"features": [{"geometry": {}}]}))
+        self.assertEqual(exc.status, 502)
+
+    @override_settings(ORS_API_KEY="")
+    def test_missing_key_fails_before_any_network_call(self):
+        exc, get = self.call(fake_response(200, geocode_body()))
+        self.assertEqual(exc.status, 500)
+        get.assert_not_called()
