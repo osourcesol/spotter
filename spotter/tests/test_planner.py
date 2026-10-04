@@ -1,11 +1,13 @@
 import random
 from decimal import Decimal
 
+from django.core.cache import cache
 from django.test import SimpleTestCase
 
 from spotter.services.locations import Location
 from spotter.services.optimizer import NoReachableStation
-from spotter.services.planner import SameLocation, build_plan
+from spotter.services.ors import RoutingError
+from spotter.services.planner import SameLocation, build_plan, get_plan
 from spotter.tests.helpers import FakeWorld, make_store, places, straight_route
 
 
@@ -145,3 +147,35 @@ class InputTests(SimpleTestCase):
             with self.assertRaises(SameLocation):
                 build_plan("a", "b")
         world.fetch_route.assert_not_called()
+
+class PlanCacheTests(SimpleTestCase):
+    def setUp(self):
+        cache.clear()
+
+    def test_a_repeated_trip_is_served_from_memory(self):
+        world, _ = cross_country_world()
+        with world as w:
+            first = get_plan("a", "b")
+            again = get_plan("  A ", "B")                           # same trip, different case and spacing
+        self.assertEqual(w.fetch_route.call_count, 1)               # the route was fetched only once
+        self.assertEqual(first["meta"]["cache_hit"], False)
+        self.assertEqual(again["meta"]["cache_hit"], True)
+        self.assertEqual(again["meta"]["external_api_calls"], 0)
+        self.assertEqual(again["total_fuel_cost_usd"], first["total_fuel_cost_usd"])
+
+    def test_a_different_trip_is_not_confused_with_a_cached_one(self):
+        world, _ = cross_country_world()
+        with world as w:
+            get_plan("a", "b")
+            get_plan("b", "a")                                      # the reverse trip is a different request
+        self.assertEqual(w.fetch_route.call_count, 2)
+
+    def test_failures_are_not_cached(self):
+        world, route = cross_country_world()
+        with world as w:
+            w.fetch_route.side_effect = [RoutingError("provider down", 502), route]
+            with self.assertRaises(RoutingError):
+                get_plan("a", "b")
+            plan = get_plan("a", "b")                               # the retry really tries again
+        self.assertEqual(w.fetch_route.call_count, 2)
+        self.assertFalse(plan["meta"]["cache_hit"])

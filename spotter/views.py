@@ -5,7 +5,7 @@ from .serializers import RouteRequestSerializer
 from .services.locations import LocationNotFound
 from .services.optimizer import NoReachableStation
 from .services.ors import RoutingError
-from .services.planner import SameLocation, build_plan
+from .services.planner import SameLocation, get_plan
 
 class RoutePlanView(APIView):
     def post(self, request):
@@ -18,7 +18,7 @@ class RoutePlanView(APIView):
             }, status=400)
         
         try:
-            plan = build_plan(serializer.validated_data["start"], serializer.validated_data["finish"])
+            plan = get_plan(serializer.validated_data["start"], serializer.validated_data["finish"])
         except (LocationNotFound, SameLocation) as e:
             return Response({
                 "error": str(e)

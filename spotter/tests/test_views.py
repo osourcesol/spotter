@@ -1,5 +1,6 @@
 import json
 from unittest import mock
+from django.core.cache import cache
 
 from django.test import SimpleTestCase
 
@@ -10,7 +11,7 @@ from spotter.services.planner import SameLocation
 from spotter.tests.helpers import FakeWorld, make_store, places, straight_route
 
 URL = "/api/route/"
-BUILD_PLAN = "spotter.views.build_plan"
+BUILD_PLAN = "spotter.views.get_plan"
 
 
 def post(client, payload):
@@ -62,6 +63,8 @@ class RouteEndpointTests(SimpleTestCase):
 
 class FullStackTests(SimpleTestCase):
     """The real view and planner, with only the outside world (routing, stations, geocoding) faked."""
+    def setUp(self):
+        cache.clear()   # earlier tests must not leave a cached plan behind
 
     def test_end_to_end_response_shape(self):
         route = straight_route(-120.0, -75.0)
@@ -76,3 +79,15 @@ class FullStackTests(SimpleTestCase):
         self.assertEqual(body["route_geojson"]["type"], "FeatureCollection")
         self.assertEqual(body["meta"]["external_api_calls"], 3)
         self.assertEqual(world.fetch_route.call_count, 1)
+    
+        def test_the_same_trip_twice_makes_no_second_round_of_outside_requests(self):
+            route = straight_route(-120.0, -75.0)
+            stations = [(-119.5 + i, 3.0 + (i % 7) * 0.1) for i in range(45)]
+            with FakeWorld(route, make_store(stations), places()) as world:
+                first = post(self.client, {"start": "a", "finish": "b"}).json()
+                second = post(self.client, {"start": " A ", "finish": "b"}).json()   # same trip, different spacing/case
+            self.assertEqual(world.fetch_route.call_count, 1)
+            self.assertEqual((first["meta"]["cache_hit"], first["meta"]["external_api_calls"]), (False, 3))
+            self.assertEqual((second["meta"]["cache_hit"], second["meta"]["external_api_calls"]), (True, 0))
+            self.assertEqual(second["total_fuel_cost_usd"], first["total_fuel_cost_usd"])
+            self.assertEqual(second["fuel_stops"], first["fuel_stops"])

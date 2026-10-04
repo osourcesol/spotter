@@ -1,6 +1,9 @@
 import time
 import numpy as np
 from decimal import ROUND_HALF_UP, Decimal
+import hashlib
+import re
+from django.core.cache import cache
 
 from .corridor import stations_along_route
 from .locations import resolve_location
@@ -13,6 +16,7 @@ MPG = 10.0
 CORRIDOR_RADII_MILES = (5.0, 15.0, 30.0)
 START_WINDOW_MILES = 10.0
 _CENT = Decimal("0.01")
+PLAN_CACHE_SECONDS = 24 * 3600
 
 class SameLocation(ValueError):
     """ start and end locations are same """
@@ -192,10 +196,35 @@ def build_plan(start_text: str, finish_text: str) -> dict:
             "external_api_calls": network_calls,
             "corridor_radius_miles": radius,
             "candidate_stations": len(corridor),
+            "cache_hit": False,
             "compute_ms": round((time.perf_counter() - started) * 1000, 1),
         }
     }
 
     return plan
 
+def _cache_key(start_text: str, finish_text: str) -> str:
+    def clean(text: str) -> str:
+        return re.sub(r"\s*,\s*", ",", " ".join(text.split()).lower())
     
+    return "plan:" + hashlib.sha1(f"{clean(start_text)}|{clean(finish_text)}".encode()).hexdigest()
+
+def get_plan(start_text: str, finish_text: str) -> dict:
+    started = time.perf_counter()
+    key = _cache_key(start_text, finish_text)
+    cached = cache.get(key)
+
+    if cached is not None:
+        meta = {
+            **cached["meta"],
+            "external_api_calls": 0,
+            "cache_hit": True,
+            "compute_ms": round((time.perf_counter() - started) * 1000, 1)
+        }
+        
+        return {**cached, "meta": meta}
+    
+    plan = build_plan(start_text, finish_text)
+    cache.set(key, plan, PLAN_CACHE_SECONDS)
+    
+    return plan
