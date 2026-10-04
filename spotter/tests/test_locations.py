@@ -15,7 +15,8 @@ class ResolveLocationTests(SimpleTestCase):
 
     def test_coordinates_are_parsed_locally_with_no_network_call(self):
         with mock.patch(GEOCODER) as geocoder:
-            self.assertEqual(resolve_location(" 32.78 , -96.80 "), Location(32.78, -96.80, "32.7800,-96.8000"))
+            self.assertEqual(resolve_location(" 32.78 , -96.80 "),
+                             Location(32.78, -96.80, "32.7800,-96.8000", "coordinates"))
             geocoder.assert_not_called()
 
     def test_coordinates_outside_the_usa_are_rejected(self):
@@ -29,8 +30,8 @@ class ResolveLocationTests(SimpleTestCase):
         with mock.patch(GEOCODER, return_value=(34.05, -118.24, "Los Angeles, CA, USA")) as geocoder:
             first = resolve_location("Los Angeles, CA")
             again = resolve_location("  los angeles,   ca ")      # different case and spacing
-            self.assertEqual(first, Location(34.05, -118.24, "Los Angeles, CA, USA"))
-            self.assertEqual(again, first)
+            self.assertEqual(first, Location(34.05, -118.24, "Los Angeles, CA, USA", "geocoder"))
+            self.assertEqual(again, Location(34.05, -118.24, "Los Angeles, CA, USA", "cache"))
             self.assertEqual(geocoder.call_count, 1)
 
     def test_unknown_place_raises_location_not_found(self):

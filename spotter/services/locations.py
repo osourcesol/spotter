@@ -14,6 +14,7 @@ class Location(NamedTuple):
     lat: float
     lon: float
     label: str
+    source: str
 
 class LocationNotFound(ValueError):
     """ the text could not be turned into a location """
@@ -32,13 +33,13 @@ def resolve_location(text: str) -> Location:
         if not (LAT_RANGE[0] <= lat <= LAT_RANGE[1] and LON_RANGE[0] <= lon <= LON_RANGE[1]):
             raise LocationNotFound(f"Coordinates '{text}' are outside the USA")
         
-        return Location(lat, lon, f"{lat:.4f},{lon:.4f}")
+        return Location(lat, lon, f"{lat:.4f},{lon:.4f}", "coordinates")
     
     key = "geo:" + hashlib.sha1(text.lower().encode()).hexdigest()
     cached = cache.get(key)
 
     if cached:
-        return Location(*cached)
+        return Location(*cached, "cache")
     
     found = geocode_us(text)
 
@@ -46,4 +47,4 @@ def resolve_location(text: str) -> Location:
         raise LocationNotFound(f"Could not find '{text}' in the USA. Try 'City, ST' (for example 'Dallas, TX')")
     
     cache.set(key, found, CACHE_SECONDS)
-    return Location(*found)
+    return Location(*found, "geocoder")
