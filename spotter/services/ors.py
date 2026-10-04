@@ -73,7 +73,8 @@ def fetch_route(start: tuple[float, float], finish: tuple[float, float]) -> Rout
             headers={"Authorization": settings.ORS_API_KEY},
             json={
                 "coordinates": [[start[1], start[0]], [finish[1], finish[0]]],
-                "instructions": False
+                "instructions": False,
+                "radiuses": [-1, -1]
             }
         )
     except requests.RequestException as e:

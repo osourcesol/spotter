@@ -63,6 +63,7 @@ class FetchRouteTests(SimpleTestCase):
         kwargs = post.call_args.kwargs
         self.assertEqual(kwargs["json"]["coordinates"], [[-100.0, 36.0], [-99.0, 36.0]])  # [lon, lat]
         self.assertIs(kwargs["json"]["instructions"], False)
+        self.assertEqual(kwargs["json"]["radiuses"], [-1, -1])
         self.assertEqual(kwargs["headers"], {"Authorization": "test-key"})
         self.assertIsNotNone(kwargs["timeout"])
 
