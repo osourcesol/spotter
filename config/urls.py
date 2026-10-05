@@ -17,6 +17,10 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import include, path
 
+from spotter.views import index_page, us_states
+
 urlpatterns = [
+    path("", index_page, name="map"),
+    path("us-states.json", us_states, name="us-states"),
     path("api/", include("spotter.urls"))
 ]

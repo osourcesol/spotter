@@ -1,7 +1,5 @@
 from dataclasses import dataclass
 
-from requests.packages import target
-
 EPS = 1e-9 # tolerance for "is this float effectively zero?"
 
 class NoReachableStation(Exception):
@@ -20,8 +18,11 @@ class Purchase:
     def cost(self) -> float:
         return self.gallons * self.price
 
-def plan_fuel(miles, prices, *, max_range_miles=500.0, mpg=10.0, start_fuel_gallons=0.0):
+def plan_fuel(miles, prices, *, max_range_miles=500.0, mpg=10.0, start_fuel_gallons=0.0,
+              min_saving_per_gallon=0.0, min_purchase_gallons=0.0):
     # decide where to buy fuel and how much in order to cover the whole route as cheaply as possible
+    # min_saving_per_gallon: a station only counts as cheaper if it beats the current price by at least this much
+    # min_purchase_gallons: when we stop, buy at least this much (but never more than the trip still needs)
     
     if len(miles) != len(prices) or len(miles) < 2:
         raise ValueError("miles & prices must have same length and atleast 2 nodes")
@@ -40,7 +41,7 @@ def plan_fuel(miles, prices, *, max_range_miles=500.0, mpg=10.0, start_fuel_gall
         j = i + 1
         
         while j < n and miles[j] <= reach:
-            if prices[j] < prices[i]:
+            if prices[j] < prices[i] - min_saving_per_gallon:
                 cheaper = j
                 break
             
@@ -49,13 +50,20 @@ def plan_fuel(miles, prices, *, max_range_miles=500.0, mpg=10.0, start_fuel_gall
             
             j += 1
         
+        # fuel still needed to finish the trip, we never buy more than this
+        remaining = (miles[-1] - miles[i]) / mpg - fuel
+
         if cheaper is not None:
             target = cheaper
-            needed = (miles[target] - miles[i]) / mpg
-            buy = max(0.0, needed - fuel)
+            required = (miles[target] - miles[i]) / mpg - fuel
+
+            if required <= EPS:
+                buy = 0.0
+            else:
+                buy = min(tank_gallons - fuel, remaining, max(required, min_purchase_gallons))
         elif best is not None:
             target = best
-            buy = tank_gallons - fuel
+            buy = min(tank_gallons - fuel, remaining)
         else:
             raise NoReachableStation(miles[i])
         

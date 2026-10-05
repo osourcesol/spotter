@@ -124,3 +124,10 @@ REST_FRAMEWORK = {
     "DEFAULT_PERMISSION_CLASSES": [],
     "UNAUTHENTICATED_USER": None,
 }
+
+MAP_TILE_URL = os.environ.get("MAP_TILE_URL", "")
+MAP_TILE_ATTRIBUTION = os.environ.get(
+    "MAP_TILE_ATTRIBUTION",
+    '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>, '
+    '&copy; <a href="https://carto.com/attributions">CARTO</a>',
+)

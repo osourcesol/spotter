@@ -141,3 +141,98 @@ class PlanFuelAgainstExactSolverTests(SimpleTestCase):
         elapsed = time.perf_counter() - started
         self.assertLess(elapsed, 0.5)
         print(f"\n   [speed] {n} stations over {distance:.0f} miles -> {len(plan)} purchases, {elapsed * 1000:.1f} ms")
+
+
+class MinimumSavingTests(SimpleTestCase):
+    def test_a_marginally_cheaper_station_is_not_worth_a_stop(self):
+        miles, prices = [0.0, 100.0, 300.0], [3.00, 2.99, 0.0]
+        exact = plan_fuel(miles, prices)
+        practical = plan_fuel(miles, prices, min_saving_per_gallon=0.05)
+        self.assertEqual(len(exact), 2)
+        self.assertEqual([(p.node, round(p.gallons, 6)) for p in practical], [(0, 30.0)])
+
+    def test_a_clearly_cheaper_station_still_gets_a_stop(self):
+        plan = plan_fuel([0.0, 100.0, 300.0], [3.00, 2.80, 0.0], min_saving_per_gallon=0.05)
+        self.assertEqual([p.node for p in plan], [0, 1])
+
+    def test_threshold_zero_is_the_exact_plan(self):
+        miles, prices = [0.0, 100.0, 250.0, 400.0], [3.4, 3.1, 3.3, 0.0]
+        self.assertEqual(plan_fuel(miles, prices), plan_fuel(miles, prices, min_saving_per_gallon=0.0))
+
+    def test_stays_feasible_and_close_to_optimal_on_random_trips(self):
+        rng = random.Random(21)
+        checked = 0
+        for _ in range(400):
+            n, distance = rng.randint(3, 40), rng.uniform(50, 4500)
+            miles = [0.0] + sorted(rng.uniform(0, distance) for _ in range(n - 2)) + [distance]
+            prices = [rng.uniform(2.7, 4.5) for _ in range(n - 1)] + [0.0]
+            optimal = optimal_cost_by_linear_programming(miles, prices)
+            for saving in (0.02, 0.05, 0.10):
+                try:
+                    plan = plan_fuel(miles, prices, min_saving_per_gallon=saving)
+                except NoReachableStation:
+                    self.assertIsNone(optimal)
+                    continue
+                checked += 1
+                gallons = sum(p.gallons for p in plan)
+                self.assertAlmostEqual(gallons, distance / MPG, places=6)
+                self.assertGreaterEqual(total_cost(plan), optimal - 1e-6)
+                self.assertLessEqual(total_cost(plan), optimal + saving * gallons + 1e-6)
+        self.assertGreater(checked, 300)
+
+
+class MinimumPurchaseTests(SimpleTestCase):
+    MILES = [0.0, 15.0, 23.0, 31.0, 35.0, 38.0, 260.0]
+    PRICES = [3.499, 3.087, 2.966, 2.899, 2.882, 2.756, 0.0]
+
+    def test_without_the_rule_the_plan_stops_every_few_miles(self):
+        plan = plan_fuel(self.MILES, self.PRICES)
+        self.assertEqual([p.node for p in plan], [0, 1, 2, 3, 4, 5])
+        self.assertLess(min(p.gallons for p in plan), 1.0)
+
+    def test_with_the_rule_the_small_stops_disappear(self):
+        plan = plan_fuel(self.MILES, self.PRICES, min_purchase_gallons=5.0)
+        self.assertEqual([p.node for p in plan], [0, 5])
+        self.assertAlmostEqual(sum(p.gallons for p in plan), 26.0)
+        self.assertGreaterEqual(plan[0].gallons, 5.0)
+
+    def test_the_rule_never_makes_a_trip_end_with_fuel_left_over(self):
+        plan = plan_fuel([0.0, 20.0], [3.5, 0.0], min_purchase_gallons=5.0)
+        self.assertAlmostEqual(plan[0].gallons, 2.0)
+
+    def test_the_rule_does_not_create_a_stop_when_there_is_enough_fuel(self):
+        plan = plan_fuel([0.0, 10.0, 20.0, 400.0], [3.5, 3.0, 2.6, 0.0], min_purchase_gallons=10.0)
+        self.assertEqual([p.node for p in plan], [0, 2])
+
+    def check_replay(self, plan, miles, min_purchase):
+        fuel, position, tank = 0.0, 0.0, 50.0
+        for index, p in enumerate(plan):
+            fuel -= (p.mile_marker - position) / MPG
+            self.assertGreaterEqual(fuel, -1e-6)
+            before = fuel
+            fuel += p.gallons
+            self.assertLessEqual(fuel, tank + 1e-6)
+            position = p.mile_marker
+            last = index == len(plan) - 1
+            self.assertTrue(p.gallons >= min_purchase - 1e-6 or abs(fuel - tank) < 1e-6 or last,
+                            f"small purchase {p.gallons:.2f} gal at mile {p.mile_marker:.0f}")
+        self.assertAlmostEqual(sum(p.gallons for p in plan), miles[-1] / MPG, places=6)
+
+    def test_random_trips_stay_feasible_valid_and_never_beat_the_optimum(self):
+        rng = random.Random(5)
+        checked = 0
+        for _ in range(300):
+            n, distance = rng.randint(3, 40), rng.uniform(50, 4500)
+            miles = [0.0] + sorted(rng.uniform(0, distance) for _ in range(n - 2)) + [distance]
+            prices = [rng.uniform(2.7, 4.5) for _ in range(n - 1)] + [0.0]
+            optimal = optimal_cost_by_linear_programming(miles, prices)
+            for minimum in (3.0, 5.0, 10.0):
+                try:
+                    plan = plan_fuel(miles, prices, min_saving_per_gallon=0.05, min_purchase_gallons=minimum)
+                except NoReachableStation:
+                    self.assertIsNone(optimal)
+                    continue
+                checked += 1
+                self.check_replay(plan, miles, minimum)
+                self.assertGreaterEqual(total_cost(plan), optimal - 1e-6)
+        self.assertGreater(checked, 300)

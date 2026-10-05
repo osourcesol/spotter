@@ -3,6 +3,7 @@ from contextlib import ExitStack
 from unittest import mock
 
 import numpy as np
+from django.core.cache import cache
 
 from spotter.services.geo import haversine_mi
 from spotter.services.locations import Location
@@ -44,6 +45,7 @@ class FakeWorld(ExitStack):
 
     def __enter__(self):
         super().__enter__()
+        cache.clear()
         self.fetch_route = self.enter_context(
             mock.patch("spotter.services.planner.fetch_route", return_value=self.route))
         self.enter_context(mock.patch("spotter.services.planner.get_store", return_value=self.store))
