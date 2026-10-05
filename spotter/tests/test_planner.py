@@ -1,3 +1,4 @@
+from decimal import ROUND_HALF_UP, Decimal
 import random
 from decimal import Decimal
 
@@ -40,6 +41,14 @@ class PlanContentTests(SimpleTestCase):
         self.assertGreaterEqual(len(plan["fuel_stops"]), 4)
         self.assertEqual([s["order"] for s in plan["fuel_stops"]], list(range(1, len(plan["fuel_stops"]) + 1)))
 
+    def test_every_line_multiplies_out_to_its_cost(self):
+        world, _ = cross_country_world()
+        with world:
+            plan = build_plan("a", "b")
+        for row in plan["fuel_stops"] + [plan["start_fill"]]:
+            shown = Decimal(str(row["gallons"])) * Decimal(str(row["price_per_gallon"]))
+            self.assertEqual(shown.quantize(Decimal("0.01"), rounding=ROUND_HALF_UP), Decimal(str(row["cost_usd"])))
+    
     def test_geojson_has_route_both_ends_and_every_stop(self):
         world, _ = cross_country_world()
         with world:

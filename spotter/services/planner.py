@@ -63,6 +63,11 @@ def _cents(value: float) -> Decimal:
     # round price to cents, half-up
     return Decimal(str(float(value))).quantize(_CENT, rounding=ROUND_HALF_UP)
 
+def _line_cost(gallons: float, price: float) -> Decimal:
+    # cost of a line exactly as it is shown: gallons and price to 3 decimals, multiplied, rounded to cents
+    shown = Decimal(str(round(float(gallons), 3))) * Decimal(str(round(float(price), 3)))
+    return shown.quantize(_CENT, rounding=ROUND_HALF_UP)
+
 def _choose_plan(route, store, options):
     last_error = NoReachableStation(0.0)
 
@@ -113,7 +118,7 @@ def _station_payload(store, index, mile_marker, off_route_miles, price, gallons)
         "off_route_miles": round(float(off_route_miles), 1),
         "price_per_gallon": round(float(price), 3),
         "gallons": round(float(gallons), 3),
-        "cost_usd": float(_cents(gallons * price)),
+        "cost_usd": float(_line_cost(gallons, price)),
     }
 
     return payload
@@ -214,13 +219,13 @@ def build_plan(start_text: str, finish_text: str, options: PlanOptions = None) -
         # cost uses the real price, not the penalised one
         if purchase.node == 0:
             price = float(real_prices[start_position])
-            line_items.append(_cents(purchase.gallons * price))
+            line_items.append(_line_cost(purchase.gallons, price))
             start_fill = _start_fill_payload(store, corridor, start_position, price, purchase.gallons)
             continue
     
         k = purchase.node - 1
         price = float(real_prices[k])
-        line_items.append(_cents(purchase.gallons * price))
+        line_items.append(_line_cost(purchase.gallons, price))
         stop = _station_payload(store, corridor.station_index[k], corridor.mile_marker[k], corridor.off_route_miles[k], price, purchase.gallons)
         stop["order"] = len(stops) + 1
         stops.append(stop)
