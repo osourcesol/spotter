@@ -139,7 +139,7 @@ Starting at the beginning of the route, at every station the planner looks at ev
 
 The destination counts as a station with price zero, so the last stop buys only what is needed to arrive.
 
-This is the classic "gas station" greedy algorithm, and with both practical rules set to 0 it gives the exact minimum cost. The tests check that claim: thousands of random trips are solved with this planner and with an exact linear programming solver (`scipy.optimize.linprog`), and the costs must match.
+This is the classic "gas station" greedy algorithm, and with both practical rules set to 0 it gives the exact minimum cost. The tests check that claim: about 800 random trips are solved with this planner and with an exact linear programming solver (`scipy.optimize.linprog`), and the costs must match to the cent.
 
 Two rules make the plan practical instead of exact:
 
